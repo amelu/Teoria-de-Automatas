@@ -1,2 +1,3 @@
 # Teoria-de-Automatas
-Lenguaje codigo modifiquen
+Creacion de gramaticas y lenguajes formales
+

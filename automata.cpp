@@ -51,9 +51,25 @@ void potencia_ab(char a,char b,int pot){
             cout<<"Ingrese los caracteres correspondientes!!";
         }
 }
+void contar_ab(string cadena){
+    int contador_a=0;
+    int contador_b=0;
+    for(int i=0;i<=cadena.size();i++){
+        if(cadena[i]=='a'){
+            contador_a++;
+        }else if(cadena[i]=='b'){
+            contador_b++;
+        }
+    }
+    cout<<"Letras a en la cadena: "<<contador_a<<"\n";
+    cout<<"Letras b en la cadena: "<<contador_b<<"\n";
+
+
+}
+
 
 main(){
     potencia("baba",2);
     potencia_ab('a','b',3);
-
+	contar_ab("waba");
 }

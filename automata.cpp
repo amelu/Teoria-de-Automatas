@@ -1,75 +1,80 @@
 #include"bits/stdc++.h"
 using namespace std;
-string validar(string cadena){
-    string aux;
-    int cont=0;
+bool validar(string cadena){
+    bool x;
     for (int k = 0; k < cadena.size(); k++) {
             if(cadena[k]=='a'||cadena[k]=='b'){
-                aux=aux+cadena[k];
-                cont++;
-
+                    x=true;
             }
             else{
+                x=false;
                 break;
             }
 	}
 
-        return aux;
+    return x;
 
 }
-void inversa(string cadena){
+string inversa(string cadena){
     validar(cadena);
     string alreves;
     for(int i=cadena.size();i>=0;i--){
         alreves=alreves+cadena[i];
     }
-    cout<<alreves;
+    return alreves;
 }
-void concatenar(string cadena1,string cadena2){
-    string cadena3=validar(cadena1)+validar(cadena2);
-    cout<<cadena3;
+string concatenar(string cadena1,string cadena2){
+    string cadena3=cadena1+cadena2;
+    return cadena3;
 }
-void potencia(string cadena,int pot){
-    string cadenaaux=validar(cadena);
-    for(int i=0;i<pot;i++){
-        cout<<cadenaaux;
+string potencia(string cadena,int pot){
+    string cadenaaux=cadena;
+    for(int i=0;i<pot-1;i++){
+        cadenaaux+=cadena;
     }
-    cout<<"\n";
+    return cadenaaux;
 
 }
-void potencia_ab(char a,char b,int pot){
+string potencia_ab(char a,char b,int pot){
+        string aux;
         if(a=='a'||b=='b'){
             for(int i=0;i<pot;i++){
-                cout<<a;
+                aux+='a';
             }
             for(int i=0;i<pot;i++){
-                cout<<b;
+                aux+='b';
             }
-            cout<<"\n";
+            return aux;
         }
-        else{
-            cout<<"Ingrese los caracteres correspondientes!!";
-        }
+
 }
-void contar_ab(string cadena){
-    int contador_a=0;
-    int contador_b=0;
-    for(int i=0;i<=cadena.size();i++){
-        if(cadena[i]=='a'){
-            contador_a++;
-        }else if(cadena[i]=='b'){
-            contador_b++;
-        }
+int contar_a(string cadena){
+  int contador=0;
+  for(int i=0;i<cadena.size();i++){
+    if(cadena[i]=='a'){
+        contador++;
     }
-    cout<<"Letras a en la cadena: "<<contador_a<<"\n";
-    cout<<"Letras b en la cadena: "<<contador_b<<"\n";
-
-
+  }
+  return contador;
+}
+int contar_b(string cadena){
+  int contador=0;
+  for(int i=0;i<cadena.size();i++){
+    if(cadena[i]=='b'){
+        contador++;
+    }
+  }
+  return contador;
 }
 
 
 main(){
-    potencia("baba",2);
-    potencia_ab('a','b',3);
-	contar_ab("waba");
+    if(validar("waba")==true){
+        cout<<contar_a("baba")<<"\n";
+        cout<<contar_b("baba")<<"\n";
+    }
+    else{
+        cout<<"Mijo pon bien la cadena";
+    }
+
 }

@@ -1,5 +1,6 @@
 #include"bits/stdc++.h"
 using namespace std;
+/* CHECA LINEA 77*/
 bool validar(string cadena){
     bool x;
     for (int k = 0; k < cadena.size(); k++) {
@@ -74,7 +75,7 @@ main(){
         cout<<contar_b("baba")<<"\n";
     }
     else{
-        cout<<"Mijo pon bien la cadena";
+        cout<<"Mijo pon bien la cadena: editando PAPAAA";
     }
 
 }
